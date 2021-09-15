@@ -1,0 +1,25 @@
++set pagination off
++file multibucle
++b _start
+Breakpoint 1 at 0x401000
++b _exit
+Breakpoint 2 at 0x4010a6
++r
+
+Breakpoint 1, 0x0000000000401000 in _start ()
++c
+
+Breakpoint 2, 0x00000000004010a6 in _exit ()
++i r r10 r11
+r10            0x1e                30
+r11            0x1e                30
++n
+Single stepping until exit from function _exit,
+which has no line number information.
+0x0000000000000001 in ?? ()
++q
+A debugging session is active.
+
+	Inferior 1 [process 8414] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
