@@ -14,26 +14,6 @@ Breakpoint 2, 0x0000000000401083 in _exit ()
 $1 = 84 'T'
 +info r r9
 r9             0x3                 3
-+print (int) lenp
-pali.gdb:13: Error in sourced command file:
-Cannot access memory at address 0x3
-+q
-+set pagination off
-+file palindromo
-+b _start
-Breakpoint 1 at 0x401000
-+b _exit
-Breakpoint 2 at 0x401083
-+r
-
-Breakpoint 1, 0x0000000000401000 in _start ()
 +c
-
-Breakpoint 2, 0x0000000000401083 in _exit ()
-+print (char) lvl
-$1 = 84 'T'
-+info r r9
-r9             0x3                 3
-+c
-[Inferior 1 (process 10052) exited normally]
+[Inferior 1 (process 10585) exited normally]
 +q

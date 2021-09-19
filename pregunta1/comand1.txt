@@ -51,11 +51,11 @@ $4 = 1
 Program received signal SIGSEGV, Segmentation fault.
 0x0000000000000001 in ?? ()
 +info r r10 r11
-r10            0x1e                30 
+r10            0x1e                30
 r11            0x1e                30
 +q
 A debugging session is active.
 
-	Inferior 1 [process 3513] will be killed.
+	Inferior 1 [process 10443] will be killed.
 
 Quit anyway? (y or n) [answered Y; input not from terminal]
