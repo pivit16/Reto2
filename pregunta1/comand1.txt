@@ -2,24 +2,60 @@
 +file multibucle
 +b _start
 Breakpoint 1 at 0x401000
++b sumloop
+Breakpoint 2 at 0x40104b
 +b _exit
-Breakpoint 2 at 0x4010a6
+Breakpoint 3 at 0x4010a6
 +r
 
 Breakpoint 1, 0x0000000000401000 in _start ()
 +c
 
-Breakpoint 2, 0x00000000004010a6 in _exit ()
-+i r r10 r11
-r10            0x1e                30
-r11            0x1e                30
-+n
-Single stepping until exit from function _exit,
-which has no line number information.
+Breakpoint 2, 0x000000000040104b in sumloop ()
++set $cont = $rcx
++while($cont >0)
+++info r rax
+rax            0x0                 0
+++c
+
+Breakpoint 2, 0x000000000040104b in sumloop ()
+++p $cont
+$1 = 4
+++set $cont = $rcx
+++info r rax
+rax            0x2                 2
+++c
+
+Breakpoint 2, 0x000000000040104b in sumloop ()
+++p $cont
+$2 = 3
+++set $cont = $rcx
+++info r rax
+rax            0x4                 4
+++c
+
+Breakpoint 2, 0x000000000040104b in sumloop ()
+++p $cont
+$3 = 2
+++set $cont = $rcx
+++info r rax
+rax            0x8                 8
+++c
+
+Breakpoint 3, 0x00000000004010a6 in _exit ()
+++p $cont
+$4 = 1
+++set $cont = $rcx
++c
+
+Program received signal SIGSEGV, Segmentation fault.
 0x0000000000000001 in ?? ()
++info r r10 r11
+r10            0x1e                30 
+r11            0x1e                30
 +q
 A debugging session is active.
 
-	Inferior 1 [process 8414] will be killed.
+	Inferior 1 [process 3513] will be killed.
 
 Quit anyway? (y or n) [answered Y; input not from terminal]

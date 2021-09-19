@@ -1,0 +1,21 @@
++set pagination off
++file fuerte
++b _start
+Breakpoint 1 at 0x401000
++b _exit
+Breakpoint 2 at 0x40109b
++r
+
+Breakpoint 1, 0x0000000000401000 in _start ()
++c
+
+Breakpoint 2, 0x000000000040109b in _exit ()
++info r r9
+r9             0x91                145
++print (int) num
+$1 = 145
++print (char) lvl
+$2 = 84 'T'
++c
+[Inferior 1 (process 7070) exited normally]
++q
